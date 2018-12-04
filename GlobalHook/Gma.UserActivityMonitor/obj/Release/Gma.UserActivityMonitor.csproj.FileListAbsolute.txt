@@ -1,0 +1,4 @@
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitor\bin\Release\Gma.UserActivityMonitor.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitor\obj\Release\Gma.UserActivityMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitor\obj\Release\Gma.UserActivityMonitor.csproj.CoreCompileInputs.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitor\obj\Release\Gma.UserActivityMonitor.dll

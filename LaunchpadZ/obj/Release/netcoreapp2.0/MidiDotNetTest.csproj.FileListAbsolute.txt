@@ -1,0 +1,3 @@
+C:\Users\Zak Body\source\repos\MidiDotNetTest\MidiDotNetTest\obj\Release\netcoreapp2.0\MidiDotNetTest.csproj.CoreCompileInputs.cache
+C:\Users\Zak Body\source\repos\MidiDotNetTest\MidiDotNetTest\obj\Release\netcoreapp2.0\MidiDotNetTest.AssemblyInfoInputs.cache
+C:\Users\Zak Body\source\repos\MidiDotNetTest\MidiDotNetTest\obj\Release\netcoreapp2.0\MidiDotNetTest.AssemblyInfo.cs

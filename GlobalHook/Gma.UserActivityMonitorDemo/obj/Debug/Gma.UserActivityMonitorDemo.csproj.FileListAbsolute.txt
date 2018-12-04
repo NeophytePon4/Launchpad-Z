@@ -1,0 +1,13 @@
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\bin\Debug\Gma.UserActivityMonitorDemo.exe
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\bin\Debug\Gma.UserActivityMonitorDemo.pdb
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\bin\Debug\Gma.UserActivityMonitor.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\bin\Debug\Gma.UserActivityMonitor.pdb
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.csprojResolveAssemblyReference.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.TestFormStatic.resources
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.TestFormComponent.resources
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.Properties.Resources.resources
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.csproj.GenerateResource.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.csproj.CoreCompileInputs.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.csproj.CopyComplete
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.exe
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHook\Gma.UserActivityMonitorDemo\obj\Debug\Gma.UserActivityMonitorDemo.pdb

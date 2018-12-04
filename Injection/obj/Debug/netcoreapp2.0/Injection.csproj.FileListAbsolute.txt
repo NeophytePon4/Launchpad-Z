@@ -1,0 +1,11 @@
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\bin\Debug\netcoreapp2.0\Injection.deps.json
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\bin\Debug\netcoreapp2.0\Injection.runtimeconfig.json
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\bin\Debug\netcoreapp2.0\Injection.runtimeconfig.dev.json
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\bin\Debug\netcoreapp2.0\Injection.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\bin\Debug\netcoreapp2.0\Injection.pdb
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.csprojResolveAssemblyReference.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.csproj.CoreCompileInputs.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.AssemblyInfoInputs.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.AssemblyInfo.cs
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\Injection\obj\Debug\netcoreapp2.0\Injection.pdb
