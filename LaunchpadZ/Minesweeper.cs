@@ -6,6 +6,7 @@ using LaundpadZ;
 using Midi;
 using System.Threading;
 using System.Linq;
+using System.Collections;
 
 namespace LaundpadZ
 {
@@ -264,10 +265,11 @@ namespace LaundpadZ
 
 
         private void ButtonPress(NoteOnMessage msg) {
+            ArrayList config = UI.GetConfig();
             if (running) {
                 if (msg.Velocity == 127 && !rightLEDnotes.Contains(msg.Pitch)) {
                     pressCount++;
-                    Timer doubleClick = new Timer(state => DoubleClick(msg), 0, 250, 0);
+                    Timer doubleClick = new Timer(state => DoubleClick(msg), 0, (int)config[0], 0);
 
                 }
                 else if (msg.Velocity == 127 && rightLEDnotes.Contains(msg.Pitch)) {

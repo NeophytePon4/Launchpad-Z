@@ -1,0 +1,7 @@
+DoubleClickSpeed:250; Influences minesweeper and UI. Speed at which you must press for it to register as a double click
+TextScrollSpeed:6; How fast the text scrolls across the screen
+Button1:(66, 134, 244); Idle button - Middle
+Button2:(8, 255, 100); Clock Button - Top Left
+Button3:(8, 255, 100); Keypress Button - Top Right
+Button4:(127, 0, 255); Reaction Game - Top middle
+Button5:(127, 0, 255); Minesweeper - Bottom Middle

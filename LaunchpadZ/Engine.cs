@@ -32,9 +32,8 @@ namespace MidiDotNetTest {
 
         public InputDevice inputDevice;
         public OutputDevice outputDevice;
-        public bool coleMode;
 
-        public Engine(InputDevice inputDevice, OutputDevice outputDevice, bool coleMode = false) {
+        public Engine(InputDevice inputDevice, OutputDevice outputDevice) {
 
 
             this.inputDevice = inputDevice;
@@ -116,14 +115,7 @@ namespace MidiDotNetTest {
         public void ScrollText(string text, int speed, int velocity) {
             byte[] sysStop = { 0xF7 };
             byte _speed = 5;
-            if (coleMode) {
-                _speed = 2;
-
-            }
-            else if (!coleMode) {
-                _speed = (byte)speed;
-
-            }
+            _speed = (byte)speed;
             byte _velocity = (byte)velocity;
             //byte[] _text = { };
 
