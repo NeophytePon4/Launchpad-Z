@@ -206,6 +206,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "GlobalHotKey/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/GlobalHotKey.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GlobalHotKey.dll": {}
+        }
+      },
       "Gma.UserActivityMonitor/1.0.0": {
         "type": "project",
         "compile": {
@@ -704,6 +713,11 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "GlobalHotKey/1.0.0": {
+      "type": "project",
+      "path": "../GlobalHotKey/GlobalHotKey.csproj",
+      "msbuildProject": "../GlobalHotKey/GlobalHotKey.csproj"
+    },
     "Gma.UserActivityMonitor/1.0.0": {
       "type": "project",
       "path": "../GlobalHook/Gma.UserActivityMonitor/Gma.UserActivityMonitor.csproj",
@@ -712,6 +726,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "GlobalHotKey >= 1.0.0",
       "Gma.UserActivityMonitor >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Newtonsoft.Json >= 11.0.2"
@@ -752,6 +767,9 @@
           "projectReferences": {
             "C:\\Users\\Zak Body\\source\\repos\\Launchpad-Z\\GlobalHook\\Gma.UserActivityMonitor\\Gma.UserActivityMonitor.csproj": {
               "projectPath": "C:\\Users\\Zak Body\\source\\repos\\Launchpad-Z\\GlobalHook\\Gma.UserActivityMonitor\\Gma.UserActivityMonitor.csproj"
+            },
+            "C:\\Users\\Zak Body\\source\\repos\\Launchpad-Z\\GlobalHotKey\\GlobalHotKey.csproj": {
+              "projectPath": "C:\\Users\\Zak Body\\source\\repos\\Launchpad-Z\\GlobalHotKey\\GlobalHotKey.csproj"
             }
           }
         }

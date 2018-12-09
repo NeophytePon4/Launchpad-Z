@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GlobalHook\Gma.UserActivityMonitor\Gma.UserActivityMonitor.csproj" />
+    <ProjectReference Include="..\GlobalHotKey\GlobalHotKey.csproj" />
   </ItemGroup>
 
   <ItemGroup>

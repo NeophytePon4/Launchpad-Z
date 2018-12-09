@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 //using System.Timers;
-using LaundpadZ;
 using Midi;
 using MidiDotNetTest;
 
-namespace LaundpadZ
-{
+namespace LaundpadZ {
     class UI {
         private Engine engine;
         public Pitch[,] notes = Engine.notes;
         public Pitch[] rightLEDnotes = Engine.rightLEDnotes;
         private int rightNote;
         private ReactionGame game;
+        private Minesweeper minesweeper;
 
         public int[,] buttonMap = new int[8, 8];
         public bool clock = false;
@@ -33,10 +30,12 @@ namespace LaundpadZ
         }
 
         public void CreateButtons() {
-            CreateButton((0, 0), (7, 7), (0, 100, 150), id: 3); //Clock
-            CreateButton((1, 1), (6, 6), (5, 20, 200), id: 2); //Keys pressed
-            CreateButton((2, 2), (5, 5), (89, 0, 255)); //Idle display
-            CreateButton((3, 3), (4, 4), (16, 90, 150), id: 4); //Reaction game
+            CreateButton((0, 0), (1, 1), (0, 220, 150), id: 3); //Clock  - top left
+            CreateButton((6, 0), (7, 1), (5, 20, 200), id: 2); //Keys pressed - top right
+            CreateButton((2, 2), (5, 5), (89, 0, 255)); //Idle display - middle
+            CreateButton((2, 0), (5, 1), (16, 90, 150), id: 4); //Reaction game - top middle
+            CreateButton((2, 6), (5, 7), (16, 90, 150), id: 5); //Minesweeper - bottom middle
+
 
 
         }
@@ -90,6 +89,10 @@ namespace LaundpadZ
                     clock = false;
                     if (game != null)
                         game.running = false;
+                    if (minesweeper != null) {
+                        minesweeper.StopGame();
+                        minesweeper.running = false;
+                    }
 
                     Thread.Sleep(10);
                     engine.Clear();
@@ -139,6 +142,19 @@ namespace LaundpadZ
 
                     ClearMap();
                     app = new Thread(new ThreadStart(game.Start));
+                    app.Start();
+                }
+
+                if (buttonId == 5 && twice) {
+                    engine.ScrollText("Minesweeper", 6, 3);
+
+                }
+                else if (buttonId == 5 && !twice) {
+                    engine.inputDevice.StopReceiving();
+                    minesweeper = new Minesweeper(engine);
+
+                    ClearMap();
+                    app = new Thread(new ThreadStart(minesweeper.Start));
                     app.Start();
                 }
 

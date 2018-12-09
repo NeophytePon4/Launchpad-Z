@@ -92,7 +92,6 @@ namespace LaundpadZ
             NewNode(2);
             
 
-            Console.ReadKey();
         }
 
         private void NewNode(int index) {
