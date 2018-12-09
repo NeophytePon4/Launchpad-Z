@@ -65,11 +65,12 @@ namespace LaundpadZ
             int mineX;
             int mineY;
             for (int i = 0; i <= 9; i++) {
-                mineX = rnd.Next(0,8);
-                mineY = rnd.Next(0, 8);
-
+                do {
+                    mineX = rnd.Next(0, 8);
+                    mineY = rnd.Next(0, 8);
+                } while (mineField[mineY, mineX] == 1);
                 mineField[mineY, mineX] = 1;
-                //engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
+                engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
             }
         }
 
@@ -220,6 +221,28 @@ namespace LaundpadZ
             pressCount = 0;
         }
 
+        private void CheckWin() {
+            int correct = 0;
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    if (mineField[i, j] == 1 && flags[i,j] == 1) {
+                        correct++;
+                    } else if (mineField[i, j] == 0 && flags[i, j] == 1) {
+                        correct--;
+                    }
+                }
+            }
+            Console.WriteLine(correct);
+
+            if (correct == 10) {
+                Console.WriteLine("You win");
+                engine.DrawRect((0,0),(7,7),(0, 255, 0), filled: true);
+                Thread.Sleep(1000);
+                StopGame();
+                running = false;
+            }
+        }
+
         private void Click(NoteOnMessage msg, bool twice) {
             int x = 0;
             int y = 0;
@@ -259,6 +282,7 @@ namespace LaundpadZ
                 }
                 else if (twice) {
                     CreateFlag((x, y));
+                    CheckWin();
                 } 
             }
         }
