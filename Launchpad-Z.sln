@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.UserActivityMonitorDemo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaundpadZ", "LaunchpadZ\LaundpadZ.csproj", "{DB4A3512-8491-4D35-90E4-4394EA5E8BC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injection", "Injection\Injection.csproj", "{5EBBB181-9CDF-4D2D-BB3A-603F20700C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injection", "Injection\Injection.csproj", "{5EBBB181-9CDF-4D2D-BB3A-603F20700C6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalHotKey", "GlobalHotKey\GlobalHotKey.csproj", "{309C707F-4DFA-4412-9F54-4C0627B626AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5EBBB181-9CDF-4D2D-BB3A-603F20700C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EBBB181-9CDF-4D2D-BB3A-603F20700C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EBBB181-9CDF-4D2D-BB3A-603F20700C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309C707F-4DFA-4412-9F54-4C0627B626AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309C707F-4DFA-4412-9F54-4C0627B626AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309C707F-4DFA-4412-9F54-4C0627B626AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309C707F-4DFA-4412-9F54-4C0627B626AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
