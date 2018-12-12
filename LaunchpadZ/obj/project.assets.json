@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "BASS/2.4.12.1": {
+        "type": "package",
+        "dependencies": {
+          "BASS.redist": "2.4.12.1"
+        }
+      },
+      "BASS.redist/2.4.12.1": {
+        "type": "package"
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -227,6 +236,40 @@
     }
   },
   "libraries": {
+    "BASS/2.4.12.1": {
+      "sha512": "xYLxOHKJFbdxVE2UTvLmlXqL1TNXzKXb9VqMShv6zyF70iPRoRkmFj3qxp+kIMBggWc26RuOqwSh9B6hX3kXRA==",
+      "type": "package",
+      "path": "bass/2.4.12.1",
+      "files": [
+        ".signature.p7s",
+        "bass.2.4.12.1.nupkg.sha512",
+        "bass.nuspec",
+        "build/configurations.autopkg",
+        "build/native/BASS.targets",
+        "build/native/default-propertiesui.xml",
+        "build/native/docs/bass.chm",
+        "build/native/include/bass.h",
+        "build/native/lib/Win32/bass.lib",
+        "build/native/lib/x64/bass.lib",
+        "build/publisher-info.txt"
+      ]
+    },
+    "BASS.redist/2.4.12.1": {
+      "sha512": "X6zclzgwcZ8PdhPDSXxiUSIaGfRG9GwpLOP0mlbJ3pAUNxgLpQnSyz7r3qu3Bf8xDxXDwsew9Lvefmc/7MTH1Q==",
+      "type": "package",
+      "path": "bass.redist/2.4.12.1",
+      "files": [
+        ".signature.p7s",
+        "bass.redist.2.4.12.1.nupkg.sha512",
+        "bass.redist.nuspec",
+        "build/configurations.autopkg",
+        "build/native/BASS.redist.targets",
+        "build/native/bin/Win32/bass.dll",
+        "build/native/bin/x64/bass.dll",
+        "build/native/default-propertiesui.xml",
+        "build/publisher-info.txt"
+      ]
+    },
     "Microsoft.NETCore.App/2.0.0": {
       "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
       "type": "package",
@@ -726,6 +769,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "BASS >= 2.4.12.1",
       "GlobalHotKey >= 1.0.0",
       "Gma.UserActivityMonitor >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
@@ -783,6 +827,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "BASS": {
+            "target": "Package",
+            "version": "[2.4.12.1, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",

@@ -70,7 +70,7 @@ namespace LaundpadZ
                     mineY = rnd.Next(0, 8);
                 } while (mineField[mineY, mineX] == 1);
                 mineField[mineY, mineX] = 1;
-                engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
+                //engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
             }
         }
 
@@ -212,6 +212,7 @@ namespace LaundpadZ
         }
 
         private void DoubleClick(NoteOnMessage msg) {
+            Console.WriteLine("Minesweeper fired");
             if (pressCount == 1) {
                 Click(msg, false);
             }
@@ -244,6 +245,7 @@ namespace LaundpadZ
         }
 
         private void Click(NoteOnMessage msg, bool twice) {
+            pressCount = 0;
             int x = 0;
             int y = 0;
             bool pressed = false;
@@ -294,6 +296,7 @@ namespace LaundpadZ
                 if (msg.Velocity == 127 && !rightLEDnotes.Contains(msg.Pitch)) {
                     pressCount++;
                     Timer doubleClick = new Timer(state => DoubleClick(msg), 0, (int)config[0], 0);
+
 
                 }
                 else if (msg.Velocity == 127 && rightLEDnotes.Contains(msg.Pitch)) {

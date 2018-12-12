@@ -185,19 +185,6 @@ namespace LaundpadZ {
             (int, int, int) tup;
             ArrayList config = new ArrayList { };
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\config.txt");
-            //Console.WriteLine(lines[2]);
-
-            
-
-            //object value = match.Value.TrimEnd(';');
-            //Console.WriteLine(Convert.ToInt32(value) + 1);
-
-            //string[] stringArr = value.ToString().Replace("(", "").Replace(")", "").Split(",");
-            //int[] intArr = Array.ConvertAll(stringArr, s => int.Parse(s));
-            //(int, int, int) tup1;
-            //tup1.Item1 = intArr[0];
-            //tup1.Item2 = intArr[1];
-            //tup1.Item3 = intArr[2];
 
             int count = 0;
             foreach(string line in lines) {

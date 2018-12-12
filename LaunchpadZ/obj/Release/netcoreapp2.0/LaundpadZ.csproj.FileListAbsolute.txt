@@ -23,3 +23,6 @@ C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Release\netcoreapp2.0\
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Release\netcoreapp2.0\LaundpadZ.csproj.CopyComplete
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Release\netcoreapp2.0\LaundpadZ.dll
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Release\netcoreapp2.0\LaundpadZ.pdb
+C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Release\netcoreapp2.0\Bass.Net.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Release\netcoreapp2.0\GlobalHotKey.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Release\netcoreapp2.0\GlobalHotKey.pdb

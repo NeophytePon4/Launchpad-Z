@@ -1,0 +1,6 @@
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\bin\Release\GlobalHotKey.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\bin\Release\GlobalHotKey.pdb
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\obj\Release\GlobalHotKey.csprojResolveAssemblyReference.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\obj\Release\GlobalHotKey.csproj.CoreCompileInputs.cache
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\obj\Release\GlobalHotKey.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\GlobalHotKey\obj\Release\GlobalHotKey.pdb

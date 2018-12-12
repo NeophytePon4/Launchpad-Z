@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BASS" Version="2.4.12.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
@@ -17,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Bass.Net">
+      <HintPath>Bass.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms">
       <HintPath>System.Windows.Forms.dll</HintPath>
     </Reference>
