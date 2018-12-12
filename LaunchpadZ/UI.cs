@@ -1,21 +1,21 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 //using System.Timers;
-using LaundpadZ;
 using Midi;
 using MidiDotNetTest;
+using System.Text.RegularExpressions;
 
-namespace LaundpadZ
-{
+namespace LaundpadZ {
     class UI {
         private Engine engine;
         public Pitch[,] notes = Engine.notes;
         public Pitch[] rightLEDnotes = Engine.rightLEDnotes;
         private int rightNote;
         private ReactionGame game;
+        private Minesweeper minesweeper;
 
         public int[,] buttonMap = new int[8, 8];
         public bool clock = false;
@@ -29,16 +29,30 @@ namespace LaundpadZ
             engine.inputDevice.StartReceiving(null);
             engine.NoteOnRight(0, 6);
             CreateButtons();
+            GetConfig();
+            //foreach (object obj in GetConfig()) {
+            //    Console.WriteLine(obj.ToString());
+            //}
+            //var test = GetConfig();
+            //(int, int, int) tup = (ValueTuple<int, int, int>)test[1];
+            
+            //Console.WriteLine(tup.Item1);
             Console.ReadKey();
         }
 
         public void CreateButtons() {
-            CreateButton((0, 0), (7, 7), (0, 100, 150), id: 3); //Clock
-            CreateButton((1, 1), (6, 6), (5, 20, 200), id: 2); //Keys pressed
-            CreateButton((2, 2), (5, 5), (89, 0, 255)); //Idle display
-            CreateButton((3, 3), (4, 4), (16, 90, 150), id: 4); //Reaction game
+            ArrayList config = GetConfig();
+            (int, int, int) colour1 = (ValueTuple<int, int, int>)config[config.Count - 5];
+            (int, int, int) colour2 = (ValueTuple<int, int, int>)config[config.Count - 4];
+            (int, int, int) colour3 = (ValueTuple<int, int, int>)config[config.Count - 3];
+            (int, int, int) colour4 = (ValueTuple<int, int, int>)config[config.Count - 2];
+            (int, int, int) colour5 = (ValueTuple<int, int, int>)config[config.Count - 1];
 
-
+            CreateButton((2, 2), (5, 5), colour1); //Idle display - middle
+            CreateButton((6, 0), (7, 1), colour2, id: 2); //Keys pressed - top right
+            CreateButton((0, 0), (1, 1), colour3, id: 3); //Clock  - top left
+            CreateButton((2, 0), (5, 1), colour4, id: 4); //Reaction game - top middle
+            CreateButton((2, 6), (5, 7), colour5, id: 5); //Minesweeper - bottom middle
         }
 
         public void DoubleClick(NoteOnMessage msg) {
@@ -53,6 +67,7 @@ namespace LaundpadZ
         }
 
         public void Click(NoteOnMessage msg, bool twice) {
+            ArrayList config = GetConfig();
             bool pressed = false;
             int x = 0;
             int y = 0;
@@ -90,6 +105,10 @@ namespace LaundpadZ
                     clock = false;
                     if (game != null)
                         game.running = false;
+                    if (minesweeper != null) {
+                        minesweeper.StopGame();
+                        minesweeper.running = false;
+                    }
 
                     Thread.Sleep(10);
                     engine.Clear();
@@ -100,7 +119,7 @@ namespace LaundpadZ
 
                 }
                 if (buttonId == 1 && twice) {
-                    engine.ScrollText("Does a cool idle thingy", 6, 3);
+                    engine.ScrollText("Does a cool idle thingy", (int)config[1], 3);
                 } else if (buttonId == 1 && !twice) {
                     ClearMap();
                     engine.idle = true;
@@ -108,7 +127,7 @@ namespace LaundpadZ
                     app.Start();
                 }
                 if (buttonId == 2 && twice) {
-                    engine.ScrollText("Displays the key you pressed", 6, 3);
+                    engine.ScrollText("Displays the key you pressed", (int)config[1], 3);
 
                 }
                 else if (buttonId == 2 && !twice) {
@@ -119,7 +138,7 @@ namespace LaundpadZ
                 }
 
                 if (buttonId == 3 && twice) {
-                    engine.ScrollText("Shows the time", 6, 3);
+                    engine.ScrollText("Shows the time", (int)config[1], 3);
 
                 }
                 else if (buttonId == 3 && !twice) {
@@ -130,7 +149,7 @@ namespace LaundpadZ
                 }
 
                 if (buttonId == 4 && twice) {
-                    engine.ScrollText("Press the blue buttons as fast as you can!", 6, 3);
+                    engine.ScrollText("Press the blue buttons as fast as you can!", (int)config[1], 3);
 
                 }
                 else if (buttonId == 4 && !twice) {
@@ -142,14 +161,72 @@ namespace LaundpadZ
                     app.Start();
                 }
 
+                if (buttonId == 5 && twice) {
+                    engine.ScrollText("Minesweeper", (int)config[1], 3);
+
+                }
+                else if (buttonId == 5 && !twice) {
+                    engine.inputDevice.StopReceiving();
+                    minesweeper = new Minesweeper(engine);
+
+                    ClearMap();
+                    app = new Thread(new ThreadStart(minesweeper.Start));
+                    app.Start();
+                }
+
             }
         }
 
+        public static ArrayList GetConfig() {
+            Regex regex = new Regex(@"(?<=:)[^\]]+(?<=;)");
+            Match match;
+            string value;
+            string[] stringArr;
+            (int, int, int) tup;
+            ArrayList config = new ArrayList { };
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\config.txt");
+            //Console.WriteLine(lines[2]);
+
+            
+
+            //object value = match.Value.TrimEnd(';');
+            //Console.WriteLine(Convert.ToInt32(value) + 1);
+
+            //string[] stringArr = value.ToString().Replace("(", "").Replace(")", "").Split(",");
+            //int[] intArr = Array.ConvertAll(stringArr, s => int.Parse(s));
+            //(int, int, int) tup1;
+            //tup1.Item1 = intArr[0];
+            //tup1.Item2 = intArr[1];
+            //tup1.Item3 = intArr[2];
+
+            int count = 0;
+            foreach(string line in lines) {
+                match = regex.Match(lines[count]);
+                value = match.Value.TrimEnd(';');
+
+
+                if (value[0] == '(') {
+                    stringArr = value.ToString().Replace("(", "").Replace(")", "").Split(",");
+                    int[] intArr = Array.ConvertAll(stringArr, s => int.Parse(s));
+                    tup.Item1 = intArr[0];
+                    tup.Item2 = intArr[1];
+                    tup.Item3 = intArr[2];
+                    config.Add(tup);
+                }
+                else {
+                    config.Add(Convert.ToInt32(value));
+                }
+                count++;
+            }
+
+            return config;
+        }
 
         public void ButtonPress(NoteOnMessage msg) {
+            ArrayList config = GetConfig();
             if (msg.Velocity == 127 && !rightLEDnotes.Contains(msg.Pitch)) {
                 pressCount++;
-                Timer doubleClick = new Timer(state => DoubleClick(msg), 0, 250, 0);
+                Timer doubleClick = new Timer(state => DoubleClick(msg), 0, (int)config[0], 0);
 
             } else if (msg.Velocity == 127 && rightLEDnotes.Contains(msg.Pitch)) {
                 rightNote = Array.IndexOf(rightLEDnotes, msg.Pitch);

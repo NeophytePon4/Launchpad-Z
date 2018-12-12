@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Windows.Input;
+using GlobalHotKey;
 
 namespace MidiDotNetTest {
     class Engine
@@ -31,16 +32,14 @@ namespace MidiDotNetTest {
 
         public InputDevice inputDevice;
         public OutputDevice outputDevice;
-        public bool coleMode;
 
-        public Engine(InputDevice inputDevice, OutputDevice outputDevice, bool coleMode = false) {
+        public Engine(InputDevice inputDevice, OutputDevice outputDevice) {
 
 
             this.inputDevice = inputDevice;
             this.outputDevice = outputDevice;
 
             this.outputDevice.Open();
-            this.outputDevice.SendNoteOn(Channel.Channel1,notes[0, 3], 20);
 
             this.inputDevice.Open();
             Clear();
@@ -50,15 +49,20 @@ namespace MidiDotNetTest {
 
         public void ViewKey() {
             Clear();
+
             Console.WriteLine("Reading keys..");
-            char key = Console.ReadKey(true).KeyChar;
+            var key = Console.ReadKey(true).KeyChar;
+
 
             while (key.ToString() != "\r" && !viewKey) {
                 PrintLetter(key.ToString().ToUpper());
                 key = Console.ReadKey(true).KeyChar;
                 Clear();
             }
+
         }
+
+
 
         public void Idle() {
             Clear();
@@ -111,14 +115,7 @@ namespace MidiDotNetTest {
         public void ScrollText(string text, int speed, int velocity) {
             byte[] sysStop = { 0xF7 };
             byte _speed = 5;
-            if (coleMode) {
-                _speed = 2;
-
-            }
-            else if (!coleMode) {
-                _speed = (byte)speed;
-
-            }
+            _speed = (byte)speed;
             byte _velocity = (byte)velocity;
             //byte[] _text = { };
 
@@ -165,6 +162,14 @@ namespace MidiDotNetTest {
             outputDevice.SendNoteOn(Channel.Channel1, rightLEDnotes[coord], velocity);
         }
 
+        public void RightRGB(int index, (int, int, int) rgb) {
+            outputDevice.SendSysEx(new byte[] { 0xF0, 0x00, 0x20, 0x29, 0x02, 0x18, 0x0B,
+                Convert.ToByte((int)rightLEDnotes[index]),
+                Convert.ToByte(ByteMap(rgb.Item1)),
+                Convert.ToByte(ByteMap(rgb.Item2)),
+                Convert.ToByte(ByteMap(rgb.Item3)), 0xF7 });
+        }
+
         public void DrawRect((int, int) coord1, (int, int) coord2, (int, int, int) colour, bool filled = false) {
             SetNoteRGB(coord1, (200, 5, 5));
             SetNoteRGB(coord2, (200, 5, 5));
@@ -179,21 +184,24 @@ namespace MidiDotNetTest {
             }
             else {
                 for (int x = coord1.Item1; x <= coord2.Item1; x++) {
+
                     SetNoteRGB((x, coord1.Item2), colour);
 
                     for (int y = coord1.Item2; y <= coord2.Item2; y++) {
+
                         SetNoteRGB((coord1.Item1, y), colour);
                     }
                 }
 
-                for (int x = coord2.Item1; x >= coord1.Item1; x--) {
+                for (int x = coord2.Item1; x > coord1.Item1; x--) {
                     SetNoteRGB((x, coord2.Item2), colour);
 
-                    for (int y = coord2.Item2; y >= coord1.Item2; y--) {
+                    for (int y = coord2.Item2; y > coord1.Item2; y--) {
+
                         SetNoteRGB((coord2.Item1, y), colour);
                     }
                 }
-            } 
+            }
         }
 
 

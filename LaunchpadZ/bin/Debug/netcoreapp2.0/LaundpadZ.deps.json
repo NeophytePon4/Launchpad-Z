@@ -8,8 +8,10 @@
     ".NETCoreApp,Version=v2.0": {
       "LaundpadZ/1.0.0": {
         "dependencies": {
+          "GlobalHotKey": "1.0.0",
           "Gma.UserActivityMonitor": "1.0.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "11.0.2",
+          "System.Windows.Forms": "4.0.0.0"
         },
         "runtime": {
           "LaundpadZ.dll": {}
@@ -20,9 +22,19 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "GlobalHotKey/1.0.0": {
+        "runtime": {
+          "GlobalHotKey.dll": {}
+        }
+      },
       "Gma.UserActivityMonitor/1.0.0": {
         "runtime": {
           "Gma.UserActivityMonitor.dll": {}
+        }
+      },
+      "System.Windows.Forms/4.0.0.0": {
+        "runtime": {
+          "System.Windows.Forms.dll": {}
         }
       }
     }
@@ -40,8 +52,18 @@
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
+    "GlobalHotKey/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Gma.UserActivityMonitor/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Forms/4.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

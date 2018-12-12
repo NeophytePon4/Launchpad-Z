@@ -27,3 +27,5 @@ C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Debug\netcoreapp2.0\La
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Debug\netcoreapp2.0\LaundpadZ.dll
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\obj\Debug\netcoreapp2.0\LaundpadZ.pdb
 C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Debug\netcoreapp2.0\System.Windows.Forms.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Debug\netcoreapp2.0\GlobalHotKey.dll
+C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\bin\Debug\netcoreapp2.0\GlobalHotKey.pdb

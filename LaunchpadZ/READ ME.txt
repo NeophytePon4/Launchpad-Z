@@ -1,0 +1,13 @@
+DO NOT EDIT THE CONFIG.TXT'S OPTIONS
+YOU MAY EDIT THEIR VALUES BUT DO NOT CHANGE
+THEIR NAME OR ADD NEW ONES
+
+Incase of stupidity a copy is below
+
+DoubleClickSpeed:250; How fast you need to press a button twice to register a double click
+TextScrollSpeed:6; How fast the text scrolls across the screen
+Button1:(66, 134, 244); Idle button - Middle
+Button2:(8, 255, 100); Clock Button - Top Left
+Button3:(8, 255, 100); Keypress Button - Top Right
+Button4:(127, 0, 255); Reaction Game - Top middle
+Button5:(127, 0, 255); Minesweeper - Bottom Middle
