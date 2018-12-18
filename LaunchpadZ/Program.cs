@@ -23,11 +23,19 @@ namespace MidiDotNetTest
         {
 
 
-            UI engine = new UI(new Engine(InputDevice.InstalledDevices[0], OutputDevice.InstalledDevices[1]));
+            //UI engine = new UI(new Engine(InputDevice.InstalledDevices[0], OutputDevice.InstalledDevices[1]));
             //Injection test = new Injection();
             //test.Start();
             //Minesweeper minesweeper = new Minesweeper(new Engine(InputDevice.InstalledDevices[0], OutputDevice.InstalledDevices[1], false));
             //minesweeper.Start();
+            Drawer draw = new Drawer();
+            draw.Start();
+            string key = Console.ReadLine();
+            while (key != "q") {
+                draw.ShowImage(key);
+                key = Console.ReadLine();
+            }
+            draw.End();
         }
 
     }

@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Drawing">
+      <HintPath>System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms">
       <HintPath>System.Windows.Forms.dll</HintPath>
     </Reference>

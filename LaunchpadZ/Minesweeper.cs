@@ -70,7 +70,7 @@ namespace LaundpadZ
                     mineY = rnd.Next(0, 8);
                 } while (mineField[mineY, mineX] == 1);
                 mineField[mineY, mineX] = 1;
-                engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
+                //engine.SetNoteRGB((mineX, mineY), (255, 0, 0));
             }
         }
 

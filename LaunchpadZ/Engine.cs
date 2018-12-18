@@ -136,7 +136,7 @@ namespace MidiDotNetTest {
             outputDevice.SendSysEx(command.ToArray());
         }
 
-        private JToken LoadJson(string letter) {
+        public JToken LoadJson(string letter) {
             string text = System.IO.File.ReadAllText(@"C:\Users\Zak Body\source\repos\Launchpad-Z\LaunchpadZ\Chars.json");
             //JsonTextReader reader = new JsonTextReader(new System.IO.StringReader(text));
             //while (reader.Read()) {
