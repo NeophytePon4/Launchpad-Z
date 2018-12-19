@@ -32,7 +32,19 @@ namespace MidiDotNetTest
             draw.Start();
             string key = Console.ReadLine();
             while (key != "q") {
-                draw.ShowImage(key);
+                Console.Clear();
+
+                if (key == "list") {
+                    Console.WriteLine("Avaliable images:");
+                    foreach (string name in draw.GetImages()) {
+                        Console.WriteLine(name + " - " + draw.GetType(name));
+                    }
+                }
+                else {
+                    //draw.PlayGif(key);
+                    draw.Display(key);
+
+                }
                 key = Console.ReadLine();
             }
             draw.End();
